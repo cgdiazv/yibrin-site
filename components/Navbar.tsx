@@ -5,7 +5,8 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-white z-50">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-28">
+        {/* Changed to flex-col on mobile, flex-row on desktop. Added gap-4 for mobile spacing. */}
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center py-5 md:py-0 md:h-28 gap-4 md:gap-0">
           
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
@@ -22,10 +23,11 @@ export default function Navbar() {
           </div>
 
           {/* Phone Number Button Section */}
-          <div className="flex items-center">
+          <div className="flex items-center w-full sm:w-auto">
+            {/* Added w-full on mobile to make it a nice wide touch target, normal size on desktop */}
             <a 
               href="tel:+50425533736" 
-              className="group flex items-center gap-3 px-5 py-2.5 bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-200 whitespace-nowrap cursor-pointer"
+              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3 md:px-5 md:py-2.5 bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-200 whitespace-nowrap cursor-pointer"
             >
               {/* Sleek Outline Phone Icon */}
               <svg 
